@@ -4,15 +4,13 @@ template<typename T>
 void selectionSort(T arr[],int n){
 	for(int i=0;i<n;i++){
 	   T min=arr[i];
-	   int minIdx=i;
-	   for(j=n-1;j>i;j--)
+	   for(int j=n-1;j>i;j--)
 		{
 		   if(arr[j]<min){
-		    minIdx=j;
 		    min=arr[j];
+	   	   std::swap(arr[i],arr[j]);
 		   }
 		}   
-	   std::swap(arr[i],min);
 	}
 }
 int main() {
